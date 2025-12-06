@@ -10,10 +10,12 @@
 .playlist h2 {
   margin-bottom: var(--margin-sm);
   font-size: var(--font-lg);
+  text-align: center;
 }
 
 .savePlaylistButton {
-  margin-top: var( --margin-md);
+  display: block;
+  margin: var(--margin-md) var(--margin-centerElement);
   padding: var(--padding-lf-rt);
   font-size: var(--font-md);
   background-color: var(--green);

@@ -1,30 +1,30 @@
 .playlist {
-  padding: 16px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  padding: var(--padding-md);
+  background-color: var(--white);
+  border-radius: var(--radius-md);
   max-width: 400px;
-  margin: 20px auto;
+  margin: var(--margin-top-auto);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .playlist h2 {
-  margin-bottom: 12px;
-  font-size: 20px;
-  color: #333;
+  margin-bottom: var(--margin-md);
+  font-size: var(--font-lg);
+  color: var(--grey-black);
   text-align: center;
 }
 
 .playlist ul {
   list-style-type: none; /* rimuove i pallini */
-  padding: 0;
-  margin: 0;
+  padding: var(--padding-zero);
+  margin: var(--margin-zero);
 }
 
 .playlist li {
-  padding: 8px 12px;
+  padding: var(--padding-md);
   border-bottom: 1px solid #ddd;
-  font-size: 16px;
-  color: #555;
+  font-size: var(--font-sm);
+  color: var(--grey-light);
 }
 
 .playlist li:last-child {

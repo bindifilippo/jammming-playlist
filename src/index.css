@@ -1,11 +1,4 @@
 :root {
-  /* Spaziature */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-
   /* Font sizes */
   --font-sm: 14px;
   --font-md: 18px;
@@ -18,20 +11,34 @@
   --radius-lg: 16px;
 
   /* Colori */
-  --green: #1db954;
+  --green: #2b934c;
   --white: #f9f9f9;
+  --grey-black: #333;
+    --grey-light: #666;
 
   /*Padding*/
+    --padding-zero: 0px;
     --padding-sm: 8px;
     --padding-md: 16px;
     --padding-lg: 24px;
+    --padding-square: 5px 10px;
 
 /* Margins */
+    --margin-zero: 0px;
     --margin-sm: 8px;
     --margin-md: 16px;
     --margin-lg: 24px;
     --margin-top-auto: 20px auto;
+    --margin-centerElement: auto 0;
 
 /*Padding*/
     --padding-lf-rt: 10px 20px;
+    --padding-xs: 8px;
+    --padding-total-sm: 16px;
+    --padding-total-md: 24px;
+
+
+/*Gap*/
+    --gap-sm: 8px;
+    --gap-md: 12px;
 }

@@ -2,40 +2,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 12px;
+  padding:var(--padding-lf-rt);
   border-bottom: 1px solid #ddd;
-  background-color: #fff;
-  border-radius: 6px;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
   transition: background-color 0.2s;
 }
 
 .track:hover {
-  background-color: #f4f4f4;
+  background-color: var(--radius-md);
 }
 
 .trackInformation h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
+  margin: var(--margin-zero);
+  font-size: var(--font-sm);
+  color: var(--grey-black);
 }
 
 .trackInformation p {
   margin: 2px 0 0 0;
-  font-size: 14px;
-  color: #666;
+  font-size: var(--font-sm);
+  color: var(--grey-light);
 }
 
 .trackAction {
-  font-size: 18px;
-  padding: 4px 10px;
+  font-size: var(--font-md);
+  padding: var(--padding-square);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  background-color: #1db954;
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   transition: background-color 0.2s;
 }
 
 .trackAction:hover {
-  background-color: #17a74b;
+  background-color: var(--green);
 }
