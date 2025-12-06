@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;          /* Spaziatura tra elementi */
+  gap: 12px;         
   padding: 20px;
   max-width: 400px;
-  margin: 0 auto;     /* Centra orizzontalmente */
+  margin: 0 auto;     
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@
 }
 
 .searchInputfocus {
-  border-color: #1db954; /* verde Spotify-style */
+  border-color: #1db954; 
 }
 
 

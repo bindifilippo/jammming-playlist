@@ -1,28 +1,28 @@
 .playlist {
-  padding: 16px;
-  background-color: #f9f9f9;
-  border-radius: 16px;
+  padding: var(--padding-md);
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
   max-width: 400px;
-  margin: 20px auto;
+  margin: var(--margin-top-auto);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .playlist h2 {
-  margin-bottom: 12px;
-  font-size: 20px;
+  margin-bottom: var(--margin-sm);
+  font-size: var(--font-lg);
 }
 
 .savePlaylistButton {
-  margin-top: 12px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #1db954;
-  color: white;
+  margin-top: var( --margin-md);
+  padding: var(--padding-lf-rt);
+  font-size: var(--font-md);
+  background-color: var(--green);
+  color: var(--white);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
 .savePlaylistButton:hover {
-  background-color: #17a74b;
+  background-color: var(--green);
 }

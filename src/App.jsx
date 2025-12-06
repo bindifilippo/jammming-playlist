@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './App.module.css';
+import './index.css';
+
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';

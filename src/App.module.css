@@ -1,5 +1,5 @@
 .title {
-    font-size: 36px;
-    color: #1db954;
+    font-size: var(--font-xl);
+    color: var(--green);
     text-align: center;
 }
