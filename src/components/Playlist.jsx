@@ -3,7 +3,6 @@ import Tracklist from './Tracklist';
 import styles from './Playlist.module.css'; 
 
 function Playlist() {
-  // Per ora creiamo una lista statica di tracce di esempio
   const tracks = [
     { id: 1, name: 'Song A', artist: 'Artist A', album: 'Album A' },
     { id: 2, name: 'Song B', artist: 'Artist B', album: 'Album B' },
