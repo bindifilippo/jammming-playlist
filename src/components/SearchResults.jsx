@@ -8,7 +8,7 @@ function SearchResults({ searchResults, onAdd, isLoading }) {
       <h2>Results</h2>
       {isLoading && <p>Searching...</p>}
       {!isLoading && searchResults.length === 0 && <p>No results. Try searching for a song!</p>}
-      {searchResults.length > 0 && <Tracklist tracks={searchResults} onAdd={onAdd} />}
+      {searchResults.length > 0 && <Tracklist tracks={searchResults} onAdd={onAdd} isRemoval={false}/>}
     </div>
   );
 }
