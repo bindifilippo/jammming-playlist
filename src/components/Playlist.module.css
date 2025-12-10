@@ -1,10 +1,22 @@
 .playlist {
-  padding: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;        
+  padding: var(--padding-total-md);
   background-color: var(--white);
   border-radius: var(--radius-lg);
   max-width: 400px;
   margin: var(--margin-top-auto);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.playlistNameInput {
+  text-align: center;
+  width: 80%;
+  padding: var(--padding-xs);
+  font-size: var(--font-sm);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s;
 }
 
 .playlist h2 {

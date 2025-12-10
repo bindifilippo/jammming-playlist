@@ -21,9 +21,8 @@
   width: 100%;
   padding: var(--padding-xs);
   font-size: var(--font-sm);
-  border: 2px solid #ccc;
+  border: 2px solid var(--grey-light);
   border-radius: var(--radius-sm);
-  outline: none;
   transition: border-color 0.2s;
 }
 

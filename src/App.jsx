@@ -36,29 +36,9 @@ function App() {
   };
 
   // Playlist state
-  const [playlistName, setPlaylistName] = useState('My Epic Playlist');
+  const [playlistName, setPlaylistName] = useState('My Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([
-    {
-      id: '1',
-      name: 'Levitating',
-      artist: 'Dua Lipa',
-      album: 'Future Nostalgia',
-      uri: 'spotify:track:3BZyEBhaORYsdFGelrnxtJ'
-    },
-    {
-      id: '2',
-      name: 'As It Was',
-      artist: 'Harry Styles',
-      album: 'Harry\'s House',
-      uri: 'spotify:track:41e6e75f1ebd3be33b13afc3'
-    },
-    {
-      id: '3',
-      name: 'Blinding Lights',
-      artist: 'The Weeknd',
-      album: 'After Hours',
-      uri: 'spotify:track:0VjIjW4GlUZAMYd2vXMwbk'
-    }
+    // Example initial track (can be removed)
   ]);
 
   // Method to add a track to the playlist
