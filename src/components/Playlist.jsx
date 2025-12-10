@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tracklist from './Tracklist'; 
 import styles from './Playlist.module.css'; 
 
 function Playlist({ playlistName, playlistTracks, onRemove, onNameChange, onSave }) {
+  const [isSaving, setIsSaving] = useState(false);
+
   const handleNameChange = (e) => {
     onNameChange(e.target.value);
   };
 
-  const handleSave = () => {
-    onSave();
+  const handleSave = async () => {
+    setIsSaving(true);
+    try {
+      await onSave();
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   return (
@@ -20,7 +27,13 @@ function Playlist({ playlistName, playlistTracks, onRemove, onNameChange, onSave
         className={styles.playlistNameInput}
       />
       <Tracklist tracks={playlistTracks} isRemoval={true} onRemove={onRemove} />
-      <button className={styles.savePlaylistButton} onClick={handleSave}>Save to Spotify</button>
+      <button 
+        className={styles.savePlaylistButton} 
+        onClick={handleSave}
+        disabled={isSaving}
+      >
+        {isSaving ? 'Saving...' : 'Save to Spotify'}
+      </button>
     </div>
   );
 }

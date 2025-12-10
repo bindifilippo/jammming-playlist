@@ -10,4 +10,10 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    host: '127.0.0.1', // loopback IP richiesto da Spotify per http
+    port: 5173,
+    strictPort: true,
+    // niente https: Vite serve in HTTP puro
+  },
 })

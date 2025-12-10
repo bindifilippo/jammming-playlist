@@ -1,50 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './App.module.css';
 import './index.css';
 
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
+import SpotifyAuth from './util/spotify';
 
 function App() {
-  // Hard-coded search results for now
-  const [searchResults] = useState([
-    {
-      id: '1',
-      name: 'Blinding Lights',
-      artist: 'The Weeknd',
-      album: 'After Hours',
-      uri: 'spotify:track:0VjIjW4GlUZAMYd2vXMwbk'
-    },
-    {
-      id: '2',
-      name: 'Shape of You',
-      artist: 'Ed Sheeran',
-      album: '÷',
-      uri: 'spotify:track:7qiZfU4dY1lsylvNzfJkFh'
-    },
-    {
-      id: '3',
-      name: 'Levitating',
-      artist: 'Dua Lipa',
-      album: 'Future Nostalgia',
-      uri: 'spotify:track:3BZyEBhaORYsdFGelrnxtJ'
-    },
-    {
-      id: '4',
-      name: 'Anti-Hero',
-      artist: 'Taylor Swift',
-      album: 'Midnights',
-      uri: 'spotify:track:0V3dS9VzJeowMVolia5Uyw'
-    },
-    {
-      id: '5',
-      name: 'As It Was',
-      artist: 'Harry Styles',
-      album: 'Harry\'s House',
-      uri: 'spotify:track:41e6e75f1ebd3be33b13afc3'
+  // Initialize Spotify auth on app load
+  useEffect(() => {
+    const token = SpotifyAuth.getAccessToken();
+    if (token) {
+      console.log('Spotify access token obtained:', token);
     }
-  ]);
+  }, []);
+
+  // Search results state (now mutable for API results)
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+
+  // Handle search from SearchBar
+  const handleSearch = async (searchTerm) => {
+    setIsSearching(true);
+    try {
+      const results = await SpotifyAuth.search(searchTerm);
+      setSearchResults(results);
+      console.log(`Found ${results.length} tracks for "${searchTerm}"`);
+    } catch (error) {
+      console.error('Search error:', error);
+      setSearchResults([]);
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
   // Playlist state
   const [playlistName, setPlaylistName] = useState('My Epic Playlist');
@@ -94,26 +83,52 @@ function App() {
   };
 
   // Method to save playlist to Spotify and reset
-  const savePlaylist = () => {
-    // Create an array of track URIs
-    const trackUris = playlistTracks.map(track => track.uri);
-    
-    // Log the playlist data (in real implementation, this would send to Spotify API)
-    console.log('Saving playlist to Spotify:');
-    console.log('Playlist Name:', playlistName);
-    console.log('Track URIs:', trackUris);
-    
-    // TODO: Send trackUris and playlistName to Spotify API
-    // For now, just reset the playlist
-    setPlaylistName('New Playlist');
-    setPlaylistTracks([]);
+  const savePlaylist = async () => {
+    if (playlistTracks.length === 0) {
+      alert('Your playlist is empty! Add some tracks before saving.');
+      return;
+    }
+
+    try {
+      // Step 1: Get the user's ID
+      const userId = await SpotifyAuth.getUserId();
+      if (!userId) {
+        alert('Failed to get your Spotify user ID. Please try again.');
+        return;
+      }
+      console.log('User ID:', userId);
+
+      // Step 2: Create a new playlist
+      const playlistId = await SpotifyAuth.createPlaylist(playlistName, `Created by Jammming on ${new Date().toLocaleDateString()}`);
+      if (!playlistId) {
+        alert('Failed to create playlist. Please try again.');
+        return;
+      }
+      console.log('Playlist created with ID:', playlistId);
+
+      // Step 3: Add tracks to the playlist
+      const trackUris = playlistTracks.map(track => track.uri);
+      const success = await SpotifyAuth.addTracksToPlaylist(userId, playlistId, trackUris);
+      
+      if (success) {
+        alert(`Playlist "${playlistName}" saved to Spotify with ${trackUris.length} tracks!`);
+        // Reset the playlist
+        setPlaylistName('New Playlist');
+        setPlaylistTracks([]);
+      } else {
+        alert('Playlist created but failed to add some tracks. Please check Spotify.');
+      }
+    } catch (error) {
+      console.error('Error saving playlist:', error);
+      alert('An error occurred while saving your playlist. Please try again.');
+    }
   };
 
   return (
     <div className={styles.app}>
       <h1 className={styles.title}>Jammming App</h1>
-      <SearchBar />
-      <SearchResults searchResults={searchResults} onAdd={addTrack} />
+      <SearchBar onSearch={handleSearch} />
+      <SearchResults searchResults={searchResults} onAdd={addTrack} isLoading={isSearching} />
       <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} onSave={savePlaylist} />
     </div>
   );
