@@ -295,7 +295,7 @@ const SpotifyAuth = {
     }
 
     try {
-      const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(searchTerm)}&type=track`;
+      const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(searchTerm)}&type=track&limit=10`;
       console.log('[SpotifyAuth.search] fetching:', url);
 
       const response = await fetch(url, {
