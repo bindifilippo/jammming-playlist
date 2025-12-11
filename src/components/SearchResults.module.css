@@ -15,7 +15,13 @@
   font-family: "Google Sans Flex", sans-serif; 
 }
 
-
+.playlist p {
+  margin-bottom: var(--margin-md);
+  font-size: var(--font-md);
+  color: var(--grey-black);
+  text-align: center;
+  font-family: "Google Sans Flex", sans-serif;
+}
 
 .playlist ul {
   list-style-type: none; /* rimuove i pallini */

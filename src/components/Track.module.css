@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
 .trackInformation h3{
-    font-family: 'DM Serif Display', serif;
+     font-family: "Google Sans Flex", sans-serif;
+  font-weight: 600; 
 }
 
 .track p{
