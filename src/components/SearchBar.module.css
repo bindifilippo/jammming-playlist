@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
 .searchBar {
   display: flex;
   flex-direction: column;
@@ -11,11 +13,13 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.searchBar h2 {
+.h2 {
   font-size: var(--font-lg);
   color: var(--grey-black);
   margin: var(--margin-zero);
+  font-family: "Google Sans Flex", sans-serif; 
 }
+
 
 .searchInput {
   width: 100%;

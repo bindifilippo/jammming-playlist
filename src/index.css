@@ -17,11 +17,13 @@
     --grey-light: #666;
 
   /*Padding*/
-    --padding-zero: 0px;
-    --padding-sm: 8px;
+   --padding-xs: 8px;
     --padding-md: 16px;
-    --padding-lg: 24px;
+    --padding-total-md: 24px;
     --padding-square: 5px 10px;
+    --padding-lf-rt: 10px 20px;
+    --padding-top:30px 0 0 0;
+
 
 /* Margins */
     --margin-zero: 0px;
@@ -30,13 +32,6 @@
     --margin-lg: 24px;
     --margin-top-auto: 20px auto;
     --margin-centerElement: auto 0;
-
-/*Padding*/
-    --padding-lf-rt: 10px 20px;
-    --padding-xs: 8px;
-    --padding-total-sm: 16px;
-    --padding-total-md: 24px;
-
 
 /*Gap*/
     --gap-sm: 8px;

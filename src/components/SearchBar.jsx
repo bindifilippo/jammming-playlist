@@ -18,7 +18,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className={styles.searchBar}>
-      <h2>Search for a song</h2>
+      <h2 className={styles.h2}>Search for a song</h2>
 
       <input
         type="text"
