@@ -3,7 +3,7 @@
 .title {
     padding:var(--padding-top);
     font-size: var(--font-xl);
-    color: var(--green);
+    color: var(--white);
     text-align: center;
     font-family: "Sekuya", system-ui;
     font-weight: 400;

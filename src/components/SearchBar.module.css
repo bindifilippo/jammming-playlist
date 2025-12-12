@@ -5,17 +5,17 @@
   flex-direction: column;
   align-items: center;
   gap: var(--gap-md);         
-  padding: var(--padding-total-md);
+  padding: var(--padding-lg);
   max-width: 400px;
   margin: 0 auto;     
-  background-color: #f9f9f9;
+   /*background-color: var(--white);*/
   border-radius: var(--radius-md);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .h2 {
   font-size: var(--font-lg);
-  color: var(--grey-black);
+  color: var(--white);
   margin: var(--margin-zero);
   font-family: "Google Sans Flex", sans-serif; 
 }
@@ -25,7 +25,7 @@
   width: 100%;
   padding: var(--padding-xs);
   font-size: var(--font-sm);
-  border: 2px solid var(--grey-light);
+  border: 0 solid var(--grey-light);
   border-radius: var(--radius-sm);
   transition: border-color 0.2s;
 }

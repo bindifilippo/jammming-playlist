@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
 .trackInformation h3{
-     font-family: "Google Sans Flex", sans-serif;
+  font-family: "Google Sans Flex", sans-serif;
   font-weight: 600; 
+  color: rgb(255, 255, 255)!important;
 }
 
 .track p{
   font-family: "Google Sans Flex", sans-serif;
   font-weight: 300; 
+  color: rgb(157, 157, 157)!important;
 }
 
 .track {
@@ -15,8 +17,7 @@
   justify-content: space-between;
   align-items: center;
   padding:var(--padding-lf-rt);
-  border-bottom: 1px solid #ddd;
-  background-color: var(--white);
+   /*background-color: var(--white);*/
   border-radius: var(--radius-md);
   transition: background-color 0.2s;
 }

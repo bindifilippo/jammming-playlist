@@ -1,6 +1,6 @@
 .playlist {
-  padding: var(--padding-md);
-  background-color: var(--white);
+  padding: var(--padding-lg);
+   /*background-color: var(--white);*/
   border-radius: var(--radius-md);
   max-width: 400px;
   margin: var(--margin-top-auto);
@@ -10,7 +10,7 @@
 .playlist h2 {
   margin-bottom: var(--margin-md);
   font-size: var(--font-lg);
-  color: var(--grey-black);
+  color: var(--white);
   text-align: center;
   font-family: "Google Sans Flex", sans-serif; 
 }
