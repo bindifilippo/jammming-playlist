@@ -17,13 +17,13 @@
   justify-content: space-between;
   align-items: center;
   padding:var(--padding-lf-rt);
-   /*background-color: var(--white);*/
   border-radius: var(--radius-md);
   transition: background-color 0.2s;
 }
 
 .track:hover {
   background-color: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .trackInformation h3 {

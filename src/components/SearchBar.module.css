@@ -10,7 +10,7 @@
   margin: 0 auto;     
    /*background-color: var(--white);*/
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .h2 {
@@ -24,14 +24,12 @@
 .searchInput {
   width: 100%;
   padding: var(--padding-xs);
-  font-size: var(--font-sm);
-  border: 0 solid var(--grey-light);
+  font-size: var(--font-md);
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: 1px solid rgb(107, 107, 107);
   border-radius: var(--radius-sm);
   transition: border-color 0.2s;
-}
-
-.searchInputfocus {
-  border-color: var(--green); 
 }
 
 

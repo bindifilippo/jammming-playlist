@@ -4,7 +4,7 @@
   border-radius: var(--radius-md);
   max-width: 400px;
   margin: var(--margin-top-auto);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .playlist h2 {
@@ -18,7 +18,7 @@
 .playlist p {
   margin-bottom: var(--margin-md);
   font-size: var(--font-md);
-  color: var(--grey-black);
+  color: var(--white);
   text-align: center;
   font-family: "Google Sans Flex", sans-serif;
 }
